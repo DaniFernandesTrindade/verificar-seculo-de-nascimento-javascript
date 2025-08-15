@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificar Século</title>
+  <script>
+    
+    var idade = prompt("Digite sua idade:");
+
+    if (idade !== null) {
+      idade = parseInt(idade);
+
+      if (!isNaN(idade) && idade >= 0) {
+        var anoAtual = new Date().getFullYear();
+        var anoNascimento = anoAtual - idade;
+        var seculo;
+
+        if (anoNascimento >= 2001) {
+          seculo = "século XXI";
+        } else if (anoNascimento >= 1901 && anoNascimento <= 2000) {
+          seculo = "século XX";
+        } else {
+          seculo = "fora do século XX ou XXI";
+        }
+
+        alert("Você nasceu em " + anoNascimento + " — " + seculo + ".");
+      } else {
+        alert("Por favor, insira uma idade válida.");
+      }
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
